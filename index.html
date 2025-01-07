@@ -18,13 +18,29 @@
 
         /* 가운데에 위치한 텍스트 스타일 */
         .center-text {
-            font-size: 6rem;
+            font-size: 3rem;
             font-weight: bold;
             color: #333;
+            cursor: pointer; /* 클릭 가능한 모양 */
         }
     </style>
 </head>
 <body>
-    <div class="center-text">이끾끼</div>
+    <div class="center-text" id="text">Yerin</div>
+
+    <script>
+        // 글자가 바뀌는 로직
+        let textElement = document.getElementById('text');
+        let isClicked = false;  // 클릭 여부를 추적하는 변수
+
+        textElement.addEventListener('click', function() {
+            if (isClicked) {
+                textElement.innerText = '이끾끼';
+            } else {
+                textElement.innerText = '끾끼';
+            }
+            isClicked = !isClicked;  // 클릭할 때마다 상태를 반전시킴
+        });
+    </script>
 </body>
 </html>
